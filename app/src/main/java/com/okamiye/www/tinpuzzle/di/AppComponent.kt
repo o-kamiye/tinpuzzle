@@ -11,7 +11,12 @@ import javax.inject.Singleton
  * AppComponent -
  */
 @Singleton
-@Component(modules = [AndroidSupportInjectionModule::class, AppModule::class, ActivityInjectionModule::class])
+@Component(modules = [
+    AndroidSupportInjectionModule::class,
+    AppModule::class,
+    NetworkModule::class,
+    ActivityInjectionModule::class
+])
 interface AppComponent: AndroidInjector<TinPuzzle> {
 
     @Component.Builder
@@ -20,4 +25,5 @@ interface AppComponent: AndroidInjector<TinPuzzle> {
         fun application(app: TinPuzzle): Builder
         fun build(): AppComponent
     }
+
 }

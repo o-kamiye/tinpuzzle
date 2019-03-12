@@ -7,6 +7,7 @@ import retrofit2.http.GET
  */
 interface ApiService {
 
-    @GET("images")
-    fun getImages()
+    @GET("photos/random")
+    fun getImageOfTheDay()
+
 }
