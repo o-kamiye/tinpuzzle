@@ -4,6 +4,7 @@ import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.okamiye.www.tinpuzzle.TinPuzzle
+import com.okamiye.www.tinpuzzle.networking.ApiService
 import com.okamiye.www.tinpuzzle.util.Constants
 import dagger.Module
 import dagger.Provides
@@ -47,4 +48,7 @@ class NetworkModule {
                 .client(okHttpClient)
                 .build()
 
+    @Provides
+    @Singleton
+    fun providesApiService(retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)
 }
